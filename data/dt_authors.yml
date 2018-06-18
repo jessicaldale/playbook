@@ -1,0 +1,8 @@
+author_slug:
+  name: Author Name
+  photo: path_to_image
+
+kate:
+  name: Kate Wulfson
+  location: New York
+  slack_user_id: U0FHRCA73

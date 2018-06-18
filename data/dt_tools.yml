@@ -1,0 +1,52 @@
+- title: Content Audit
+  category: Tool
+  link: /tools/content-audit.html
+  text: Evaluate the current state of content.
+- title: Content Model
+  category: Tool
+  link: /tools/content-modeling.html
+  text: Describe a product's content types, and the structures that connect them.
+- title: Contextual Inquiry
+  category: Tool
+  link: /tools/contextual-inquiry.html
+  text: Conduct fieldwork to understand the user's world.
+- title: Design Planning
+  category: Tool
+  link: /tools/design-planning.html
+  text: Prepare for and organize a design delivery.
+- title: Empathy Map
+  category: Tool
+  link: /tools/empathy-mapping.html
+  text: Document a user's perspective.
+- title: Interview Debrief
+  category: Tool
+  link: /tools/interview-debrief.html
+  text: Process learnings following a user interview.
+- title: Journey Map
+  category: Tool
+  link: /tools/journey-mapping.html
+  text: Diagram the customer experience through the individual's perspective.
+- title: Sketches
+  category: Tool
+  link: /tools/sketches.html
+  text: Draw a picture, tell a story.
+- title: Story Map
+  category: Tool
+  link: /tools/story-mapping.html
+  text: Gather requirements from a top down perspective.
+- title: User Flows
+  category: Tool
+  link: /tools/user-flows.html
+  text: Map the pages and elements that allow a user to accomplish their objectives.
+- title: User Interviews
+  category: Tool
+  link: /tools/user-interviews.html
+  text: Speak directly with users.
+- title: Wireframes
+  category: Tool
+  link: /tools/wireframes.html
+  text: Visually represent the structure, behavior, IA, content, and functionality of an interface.
+- title: Workshop Activities
+  category: Tool
+  link: /tools/workshop-activities.html
+  text: Facilitate different ways of thinking.

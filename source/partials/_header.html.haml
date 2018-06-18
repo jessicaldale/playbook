@@ -1,0 +1,31 @@
+%header
+  .wrapper
+    %nav
+      = link_to '/' do
+        = image_tag('images/TS_logo.png', :class => 'logo')
+        %span Tigerspike Playbook
+
+      %ul.lg-menu
+        - body_class = current_page.data.body_class
+        %li=link_to 'Plays', '/plays.html', :class => ('active' if body_class == 'plays')
+        -# %li=link_to 'Advice', '/blog.html', :class => ('active' if body_class == 'blog')
+        %li=link_to 'FAQs', '/faqs.html', :class => ('active' if body_class == 'faqs')
+        -# %li=link_to 'Downloads', '/downloads.html', :class => ('active' if body_class == 'downloads')
+
+      .write-cta
+        =link_to 'Submit your work', '/contribute.html', :class => "btn", :onclick => 'trackCustomEvent("Submit your work", "Header", 0);'
+
+    -# check to see if which page class is assigned, then load the correct header
+    - if current_page.data.body_class == 'article'
+      %h1.title
+        = current_page.data.title
+
+        %span.category
+          = current_page.data.category
+
+        %span.author
+          = current_page.data.author
+
+    -# - else
+    -#   %h1.title
+    -#     = current_page.data.title

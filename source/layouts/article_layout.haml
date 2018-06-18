@@ -1,0 +1,35 @@
+!!! 5
+%html{ :lang => "en"}
+  %head
+    = partial "partials/document_head"
+
+  %body{ :class => current_page.data.body_class || 'article'}
+    = partial "partials/header"
+
+    %div.topper
+      .container
+        %h1= current_page.data.title
+        - author_slug = current_page.data.author_slug
+        - author_info = data.dt_authors[author_slug]
+        - author_name = author_info.name
+        - article_date = current_page.data.date.strftime('%b, %Y')
+        - slack_user_id = author_info.slack_user_id
+        - author_location = author_info.location
+
+        - if slack_user_id
+          - author_link = link_to author_name, 'slack://user?team=T06J3FKK4&id=' + author_info.slack_user_id, :onclick => 'trackCustomEvent("Slack Message Author", "' + author_name + '", 0);'
+        - else
+          - author_link = author_name
+
+        - meta_string = 'Posted ' + article_date + ' by: ' + author_link
+
+        - if author_location
+          %span{ :class => 'meta'}= meta_string + ', ' + author_location
+        - else
+          %span{ :class => 'meta'}= meta_string
+
+    .container
+      %section.post
+        = yield
+
+    = partial "partials/footer"

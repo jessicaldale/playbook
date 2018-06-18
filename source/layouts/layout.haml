@@ -1,0 +1,12 @@
+!!! 5
+%html{ :lang => "en"}
+  %head
+    = partial "partials/document_head"
+
+  %body{:class => current_page.data.body_class || 'default'}
+    = partial "partials/header"
+
+    %section(role="main")
+      = yield
+
+    = partial "partials/footer"

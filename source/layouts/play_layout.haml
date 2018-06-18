@@ -1,0 +1,62 @@
+!!! 5
+%html{ :lang => "en"}
+  %head
+    = partial "partials/document_head"
+  %body{ :class => current_page.data.body_class || 'play-detail'}
+    = partial "partials/header"
+
+    %div.topper
+    .container
+      %section.play-content(role="main content")
+        %h1
+          = current_page.data.title
+        %p.category
+          = current_page.data.category
+        = yield
+
+      %aside
+        .play-quick-facts
+          - current_page.data.facts.each do |fact|
+            %h5 Quick Facts
+
+            %h6 Team
+            %ul
+              - fact.participants.each do |participant|
+                %li= participant.title
+
+            %h6 Time Needed
+            %ul
+              - fact.time.each do |time|
+                %li= time.title
+
+            %h6 Materials
+            %ul
+              - fact.materials.each do |material|
+                - if material.link != nil
+                  %li= link_to material.title, material.link, target: '_blank', :onclick => 'trackOutboundLink(\'' + material.link + '\'); return false;'
+                - else
+                  %li= material.title
+
+            %h6 Outputs
+            %ul
+              - fact.outputs.each do |output|
+                - if output.link != nil
+                  %li= link_to output.title, output.link, target: '_blank', :onclick => 'trackOutboundLink(\'' + output.link + '\'); return false;'
+                - else
+                  %li= output.title
+
+
+          %h5 Work Examples
+
+          %ul.examples
+            - current_page.data.examples.each do |example|
+              %li= link_to example.title, example.link, target: '_blank', :onclick => 'trackOutboundLink(\'' + example.link + '\'); return false;'
+
+          -# %h3 Additional Resources
+          -#
+          -# %ul.reading-list
+          -#   - current_page.data.resources.each do |resource|
+          -#     %li= link_to resource.title, resource.link, target: '_blank'
+
+    = partial "partials/footer"
+    = partial "partials/feedback"

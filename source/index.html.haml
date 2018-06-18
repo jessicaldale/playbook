@@ -1,0 +1,43 @@
+---
+title: Playbook - Home
+body_class: home
+---
+
+.container
+
+  %section.greeting
+    %h1.xl
+      Hello. This is the Tigerspike Playbook.
+
+    %p.display-font.med
+      It’s a resource conceived by the XD team to share our plays, which are the methods and tools we use to solve problems.
+      We made it so that we can be more consistent in how we talk about our work, even as our process evolves.
+
+    %p.display-font.med
+      Think patterns, not templates. Guide, not gospel.
+
+  %section.audience
+    %h5.links
+      = link_to 'Review the Plays', '/plays.html'
+      = link_to 'Check out the FAQs', 'faqs.html'
+
+    %div.intro
+      %h2 Huddle up!
+      %h4 Playbook is a place for sharing knowledge amongst the whole team.
+
+    %div.learners
+      %img{ :src => "images/leaf.png", :class => 'icon'}
+      %h3 For Learners
+      %p.alt-font.mid Discover our design processes.
+
+    %div.communicators
+      %img{ :src => "images/dollar.png", :class => 'icon'}
+      %h3 For Communicators
+      %p.alt-font.mid Get talking points on our ways of working.
+
+    %div.makers
+      %img{ :src => "images/mouse.png", :class => 'icon'}
+      %h3 For Makers
+      %p.alt-font.mid Share your advice from the trenches.
+
+%section.shapes

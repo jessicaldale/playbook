@@ -1,0 +1,15 @@
+.article-feedback-container
+  .feedback.action
+    Is this page useful?
+    %span.button-group
+      = link_to 'Yes', 'javascript:void(0);', :class => ('feedback-button'), :id => ('yes')
+      = link_to 'No', 'javascript:void(0);', :class => ('feedback-button'), :id => ('no')
+  .feedback.submitted.hidden
+    Thank you for your feedback!
+  .feedback.improvement.hidden
+    Please tell us how we can improve.
+    %textarea.feedback-text
+
+    = link_to 'Submit', 'javascript:void(0);', :class => ('feedback-button'), :id => ('submit')
+
+= javascript_include_tag "javascripts/feedback.js"

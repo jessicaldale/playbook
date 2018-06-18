@@ -1,0 +1,18 @@
+---
+title: Playbook - Advice
+body_class: blog
+layout: list_layout
+description: Advice from the trenches
+---
+
+%h1 Advice
+
+-# being loaded from the data/blog.yml
+%ul.cards
+	- data.dt_blog.each do |blog|
+		%li.card.mix.method{:data => {:myorder => "#"}}
+			= link_to blog.link do
+				%p.category= blog.category
+				-# %img{ :src => card.image, :class => 'icon'}
+				%p.title= blog.title
+				%p.text= blog.text

@@ -1,0 +1,43 @@
+---
+title: Playbook - Plays
+layout: card_layout
+body_class: plays
+---
+
+%h1 Plays
+
+%h2 Methods
+%p Methods are design processes used to produce a requested output, answer, or deliverable. Methods are client-facing services that our commercial team can sell, and that have strategic value to clients.
+
+-# being loaded from the data/methods.yml
+%ul.cards
+	- data.dt_methods.each do |card|
+		%li.card.mix.method{:data => {:myorder => "#"}}
+			= link_to card.link do
+				%p.category= card.category
+				-# %img{ :src => card.image, :class => 'icon'}
+				%p.title= card.title
+				%p.text= card.text
+
+%br
+%br
+%h2 Tools
+%p Tools are the work products and artifacts that we create in support of our design process and can be used to provide rationale and show thinking.
+
+-# being loaded from the data/tools.yml
+%ul.cards
+	- data.dt_tools.each do |card|
+		%li.card.mix.tool{:data => {:myorder => "#"}}
+			= link_to card.link do
+				%p.category= card.category
+				%p.title= card.title
+				%p.text= card.text
+
+-# being loaded from the data/advice.yml
+-# %ul.cards
+-# 	- data.dt_advice.each do |card|
+-# 		%li.card.mix.advice{:data => {:myorder => "#"}}
+-# 			= link_to card.link do
+-# 				%p.category= card.category
+-# 				%p.title= card.title
+-# 				%p.text= card.text

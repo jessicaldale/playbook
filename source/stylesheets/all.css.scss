@@ -1,0 +1,686 @@
+@import "bourbon/bourbon";
+@import "base/base";
+@import "neat/neat";
+@import "https://fonts.googleapis.com/css?family=Oswald:300,700|Raleway:500,600,700|Merriweather:300,400";
+
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background: $bg-color;
+  margin: 0 auto;
+  position: relative;
+}
+
+.container {
+  @include outer-container;
+}
+
+.row {
+  @include row();
+}
+
+////// Header
+header {
+  @include clearfix;
+
+  .wrapper {
+    @include outer-container;
+  }
+
+  nav {
+    padding-top: 2em;
+    text-transform: uppercase;
+    font-family: $secondary-font-family;
+    font-size: 1em;
+    letter-spacing: 0.4px;
+    color: $secondary-text-grey;
+
+    a {
+      color: $secondary-text-grey;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  ul {
+    li {
+      float: left;
+      list-style-type: none;
+      margin-left: 70px;
+      display: inline-block;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .menu {
+    display: none;
+    @include media($mobile) {
+      display: block;
+    }
+  }
+
+  .logo {
+    margin: 0 auto;
+    display: block;
+    width: 113px;
+    height: 33px;
+  }
+
+  h1 {
+    font-size: 5em;
+    color: #fff;
+    font-family: $heading-font-family;
+    margin-top: 1em;
+  }
+
+  span {
+    display: block;
+    color: #fff;
+    font-family: $heading-font-family;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 3px;
+    line-height: 1.8em;
+  }
+}
+
+.help-div {background-color: rgba(221, 221, 221, 0.5);}
+
+input {
+  display: none !important;
+}
+
+.help {
+  position: absolute;
+  top: 5em;
+  right: 5em;
+  text-transform: uppercase;
+  font-family: $secondary-font-family;
+  font-size: 1em;
+  font-weight: 300;
+  letter-spacing: 0.4px;
+  color: $secondary-text-grey;
+  @include media($mobile) {
+    display: none;
+  }
+
+}
+
+.close {display: none; float: right; padding-right: 1em;}
+
+span#help-content {
+  display: none;
+}
+
+  input#show:checked ~ span#help-content, input#show:checked ~ .close {
+    display: block;
+  }
+
+    #help-content {padding: 1em 3em;}
+
+  input#hide:checked ~ span#help-content {
+    display: none;
+  }
+
+
+/* SUB STYLES FOR HEADER BG */
+/////// Default Header
+.base header {
+  background: linear-gradient(to right, rgba(238,125,99,100) , rgba(244,201,159,100));
+}
+
+////// Methods Header
+.method header {
+  background: linear-gradient(to right, rgba(238,181,97,100) , rgba(237,208,127,100));
+}
+
+////// Tools Header
+.tool header {
+  background: linear-gradient(to right, rgba(175,216,161,100) , rgba(130,174,116,100));
+}
+
+////// Advice Header
+.advice header {
+  background: linear-gradient(to right, rgba(173,211,219,100) , rgba(110,171,194,100));
+}
+
+
+////Article Header
+
+header {
+  padding: 1em;
+  .title {
+    margin-top: 2em;
+    font-size: 3em;
+    color: #fff;
+
+    span {
+      display: block;
+      color: #fff;
+      font-family: $base-font-family;
+      font-weight: 300;
+      font-size: .4em;
+      text-transform: none;
+      letter-spacing: normal;
+    }
+  }
+
+  .action {
+
+    li {
+      width: 40px;
+      height: 40px;
+      background-size: contain;
+      list-style-type: none;
+    }
+
+    .share {
+      background-image: auto;
+    }
+
+    .email {
+      background-image: auto;
+    }
+
+    .print {
+      background-image: auto;
+    }
+  }
+}
+
+////// Footer
+footer {
+  background-color: #ececec;
+  width: 100%;
+  margin-top: 2em;
+  bottom: 0;
+  @include clearfix;
+}
+
+.notice {
+  @include span-columns(8);
+  @include shift(2);
+  padding-top: 3em;
+  padding-bottom: 1em;
+
+  p {
+    font-size: 0.8em;
+    color: #959595;
+    font-family: $base-font-family;
+    font-weight: 300;
+  }
+}
+
+// ****************** Basics ******************* //
+.base_wrapper {
+  @include span-columns(8);
+  @include shift(2);
+  margin-top: 5em;
+  @include media($mobile) {
+    @include span-columns(4);
+    padding: 0 2em;
+    margin-left: 0;
+  }
+}
+
+p {
+  font-family: $base-font-family;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.8em;
+  color: $secondary-text-grey;
+  margin: 0 0 0.75em;
+}
+
+// h1 {
+//   font-family: $heading-font-family;
+//   font-size: 38px;
+//   color: $orange;
+// }
+
+h2 {
+  font-family: $base-font-family;
+  font-weight: 300;
+  font-size: 26px;
+  font-weight: bold;
+  color: $secondary-text-grey;
+}
+
+h3 {
+  font-family: $base-font-family;
+  font-size: 16px;
+  color: $secondary-text-grey;
+  margin-top: 30px;
+}
+
+.phase-description {
+  color: $orange;
+  font-family: $base-font-family;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.values li {
+  margin: .5em 0 0 1.2em;
+  padding-left: 1em;
+  list-style-type: disc;
+  font-weight: 300;
+}
+
+// // *******************  Methods **************** //
+.cards-list {
+  @include span-columns(12);
+  // padding: 1em;
+  margin-right: 3.5em;
+  margin-top: 3.2em;
+
+  li.method:hover {
+    background-color: #f4db94;
+  }
+
+  li.tool:hover {
+    background-color: #aace9e;
+  }
+
+  li.advice:hover {
+    background-color: #add3db;
+  }
+}
+
+.card {
+  height: 18em;
+  padding-top: 3em;
+  margin: 1.8em 0;
+  position: relative;
+  @include span-columns(3);
+  @include omega(4n);
+
+  @include media ($tablet) {
+    @include span-columns(4 of 8);
+    @include omega(2n);
+  }
+
+  @include media($mobile) {
+    @include span-columns(4);
+  }
+
+  .icon {
+    width: 80px;
+    height: 80px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
+  }
+
+  .title {
+    font-family: $secondary-font-family;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.2;
+    text-align: center;
+    color: #414141;
+    margin: 1em;
+  }
+
+  .text {
+    font-size: 13px;
+    line-height: 1.43;
+    color: #6f6a66;
+    margin: 0 1em;
+    text-align: center;
+  }
+
+  .category {
+    font-family: Raleway;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    letter-spacing: 1.5px;
+    font-size: 13px;
+    color: #909090;
+  }
+}
+
+.card.method {
+  background: url("../images/tiger-card.jpg") #fff no-repeat;
+  background-size: 6px 28px;
+}
+
+.card.tool {
+  background: url("../images/tiger-tools-card.jpg") #fff no-repeat;
+  background-size: 6px 28px;
+}
+
+.card.advice {
+  background: url("../images/tiger-advice-card.jpg") #fff no-repeat;
+  background-size: 6px 28px;
+}
+
+.mix {
+  //display: none;
+}
+
+button {
+  display: inline-block;
+  padding: 0.4em 0.8em;
+  background: #666;
+  border: 0;
+  margin: 0 0.2em;
+  color: #ddd;
+  font-size: 16px;
+  font-weight: 300;
+  border-radius: 0.25em;
+  cursor: pointer;
+}
+
+button.active {
+  background: #68b8c4;
+}
+
+button:focus {
+  outline: 0 none;
+}
+
+.controls {
+  display: none;
+}
+
+// *******************  Tools **************** //
+
+.tools-card {
+  width: 15em;
+  height: 18em;
+  float: left;
+  padding-top: 1em;
+  margin: 1.8em 0.8em;
+  position: relative;
+  background: url("../images/tiger-tools.jpg") #fff no-repeat;
+  background-size: 6px 28px;
+}
+
+// *******************  Advice **************** //
+
+
+.advice-card {
+  width: 15em;
+  height: 18em;
+  float: left;
+  padding-top: 1em;
+  margin: 1.8em 0.8em;
+  position: relative;
+  background: url("../images/tiger-advice.jpg") #fff no-repeat;
+  background-size: 6px 28px;
+}
+
+// ***************** Article ******************* //
+.resources {
+  background-color: #fff;
+  @include span-columns(3.5);
+  padding: 5em 0 5em 1.5em;
+  @include media($mobile) {
+    @include span-columns(4);
+  }
+}
+
+.article-headings {
+  color: $aside-grey;
+  font-size: 14px;
+  font-family: $heading-font-family;
+  @include padding(0 1em);
+
+  li {
+    margin-bottom: 16px;
+    list-style-type: decimal;
+
+    a {
+      color: $aside-grey;
+      letter-spacing: 1px;
+      line-height: 16px;
+    }
+  }
+}
+
+.article-quick-facts {
+  @include padding(0 1em);
+
+  h3 {
+    font-family: $base-font-family;
+    font-size: 16px;
+    color: $brown-grey;
+    letter-spacing: 2px;
+    margin-bottom: 29px;
+  }
+
+  h4 {
+    font-family: $base-font-family;
+    font-style: italic;
+    font-size: 15px;
+    color: $text-yellow;
+    letter-spacing: 1px;
+    margin-top: 20px;
+  }
+
+  li {
+    font-family: $base-font-family;
+    font-weight: normal;
+    font-size: 14px;
+    color: $secondary-text-grey;
+    margin-top: 6px;
+
+    a {
+      font-style: italic;
+      font-weight: bold;
+      color: black;
+    }
+  }
+}
+
+.article-links {
+  @include padding(0 1em);
+
+  h3 {
+    font-family: $base-font-family;
+    font-size: 16px;
+    color: $brown-grey;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+  }
+
+  li {
+    margin-bottom: 1em;
+    a {
+      font-family: $base-font-family;
+      font-size: 14px;
+      color: black;
+      font-style: italic;
+      text-decoration: underline;
+    }
+  }
+}
+
+
+// Article - Body
+.article {
+  @include span-columns(8.5);
+  padding: 0 5em 0 2em;
+  margin-top: 3.5em;
+  @include media($mobile) {
+    @include span-columns(4);
+    padding: 0 2em;
+  }
+
+  ul {
+    margin: 30px 0;
+    padding-left: 3em;
+
+    li {
+      list-style-type: disc;
+      font-family: $base-font-family;
+      font-size: 1em;
+      line-height: 30px;
+
+      a {
+        font-style: italic;
+        text-decoration: underline;
+        color: black;
+      }
+    }
+  }
+
+  h1 {
+    color: $mid-yellow;
+    font-size: 50px;
+    font-family: $heading-font-family;
+  }
+
+  h2 {
+    font-family: $heading-font-family;
+  }
+
+  h3 {
+    font-family: $base-font-family;
+    font-size: 26px;
+    color: $secondary-text-grey;
+    margin: 2em 0 1em;
+  }
+
+  img {
+    margin: auto;
+    display: block;
+    width: 65%;
+  }
+}
+
+.text-wrap h3 {
+  margin-bottom: 20px;
+  margin-top: 80px;
+}
+
+.text-wrap {
+  p {
+    font-family: $base-font-family;
+    font-size: 16px;
+    color: $secondary-text-grey;
+
+    em {
+      color: $text-yellow;
+    }
+  }
+
+  h4 {
+    font-family: $base-font-family;
+    font-size: 16px;
+    color: $secondary-text-grey;
+    margin-top: 30px;
+  }
+
+  ul {
+    padding-left: 7em;
+    margin: 30px 0;
+    list-style-type: disc;
+
+    li {
+      color: $text-yellow;
+      font-family: $base-font-family;
+      font-size: 16px;
+      line-height: 28px;
+
+      a {
+        color: black;
+        font-weight: bold;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+
+// Article - Tiger Tips
+
+.tiger-tips {
+  // height: 300px;
+  background-color: #fff;
+  margin-top: 30px;
+  @include outer-container;
+  @include media($mobile) {
+    display: none;
+  }
+
+}
+
+.tip-R {
+  @include span-columns(3);
+  height: 100%;
+  position: relative;
+  background-image: url("../images/tiger.jpg");
+  background-size: cover;
+  text-align: center;
+
+  h4 {
+    font-family: $secondary-font-family;
+    font-weight: 300;
+    position: relative;
+    padding-top: 12em;
+  }
+}
+
+.tip-L {
+  @include span-columns(9);
+  padding: 2em 1em;
+
+  p {
+    color: $aside-grey;
+    font-size: 15px;
+    line-height: 24px;
+  }
+}
+
+.tiger-tips img {
+  width: 50%;
+}
+
+.tiger-tips ul {
+  margin: 15px 0;
+}
+
+
+/* hidden fixed navigation */
+#fixedbar {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(238, 125, 99, 0.85);
+}
+
+#fixednav {
+  // display: block;
+  // width: 710px;
+  // margin: 0 auto;
+  padding: 0px 25px;
+}
+
+#fixednav h3 {font-family: $heading-font-family; font-weight: normal;}
+
+#fixednav h3 a {
+  color: #fff;
+  text-decoration: underline;;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+#fixednav h3 a:hover {
+  color: #fff;
+  background: rgba(0,0,0,0.3);
+}
